@@ -6,7 +6,7 @@ Project: min-max-implementations/tic-tac-toe
 File Created: 13 May 2002
 Author: Nathan R. Yergler (https://raw.githubusercontent.com/nyergler/teaching-python-with-pygame/master/ttt-tutorial/tictactoe.py)
 -----
-Last Modified: Tuesday, 24th July 2018 7:11:09 pm
+Last Modified: Tuesday, 24th July 2018 7:35:49 pm
 Modified By: Sujan Poudel 
 '''
 
@@ -153,8 +153,13 @@ def clickBoard(board):
 
     # draw an X or O
     drawMove (board, row, col, XO)
+    switchTurn()
 
-    # toggle XO to the other player's move
+
+
+def switchTurn():
+    global XO
+        # toggle XO to the other player's move
     if (XO == "X"):
         XO = "O"
     else:
