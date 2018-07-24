@@ -6,7 +6,7 @@ Project: min-max-implementations/tic-tac-toe
 File Created: 13 May 2002
 Author: Nathan R. Yergler (https://raw.githubusercontent.com/nyergler/teaching-python-with-pygame/master/ttt-tutorial/tictactoe.py)
 -----
-Last Modified: Tuesday, 24th July 2018 6:55:52 pm
+Last Modified: Tuesday, 24th July 2018 7:11:09 pm
 Modified By: Sujan Poudel 
 '''
 
@@ -200,29 +200,31 @@ def gameWon(board):
         winner = grid[0][2]
         pygame.draw.line (board, (250,0,0), (250, 50), (50, 250), 2)
 
-# --------------------------------------------------------------------
-# initialize pygame and our window
-pygame.init()
-ttt = pygame.display.set_mode ((300, 325))
-pygame.display.set_caption ('Tic-Tac-Toe')
 
-# create the game board
-board = initBoard (ttt)
+if __name__ =="__main__":
+    # --------------------------------------------------------------------
+    # initialize pygame and our window
+    pygame.init()
+    ttt = pygame.display.set_mode ((300, 325))
+    pygame.display.set_caption ('Tic-Tac-Toe')
 
-# main event loop
-running = 1
+    # create the game board
+    board = initBoard (ttt)
 
-while (running == 1):
-    for event in pygame.event.get():
-        if event.type is QUIT:
-            running = 0
-        elif event.type is MOUSEBUTTONDOWN:
-            # the user clicked; place an X or O
-            clickBoard(board)
+    # main event loop
+    running = 1
 
-        # check for a winner
-        gameWon (board)
+    while (running == 1):
+        for event in pygame.event.get():
+            if event.type is QUIT:
+                running = 0
+            elif event.type is MOUSEBUTTONDOWN:
+                # the user clicked; place an X or O
+                clickBoard(board)
 
-        # update the display
-        showBoard (ttt, board)
+            # check for a winner
+            gameWon (board)
+
+            # update the display
+            showBoard (ttt, board)
 
