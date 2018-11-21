@@ -12,7 +12,7 @@ One to two paragraph statement about your product and what it does.
 
 ## Usage example
 
-```python
+```bash
 $ git clone https://github.com/psuzn/min-max-implementations/
 $ cd min-max-implementations && python3 tic-tac-toe/main.py
 ```
